@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="单链表总结（参考自尚硅谷）, Creeper的后花园">
+    <meta name="keywords" content="单链表总结（参考自尚硅谷Java语言）, Creeper的后花园">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>单链表总结（参考自尚硅谷） | Creeper的后花园</title>
+    <title>单链表总结（参考自尚硅谷Java语言） | Creeper的后花园</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/CreeperQian/CreeperQian.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/CreeperQian/CreeperQian.github.io/libs/awesome/css/all.css">
@@ -326,7 +326,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">单链表总结（参考自尚硅谷）</h1>
+                    <h1 class="description center-align post-title">单链表总结（参考自尚硅谷Java语言）</h1>
                 </div>
             </div>
         </div>
@@ -455,6 +455,10 @@
                                 <span class="chip bg-color">尚硅谷</span>
                             </a>
                         
+                            <a href="/tags/JAVA/">
+                                <span class="chip bg-color">JAVA</span>
+                            </a>
+                        
                     </div>
                     
                 </div>
@@ -483,7 +487,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-10-06
+                    2020-10-07
                 </div>
                 
 
@@ -513,83 +517,83 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p><strong><em>参考自尚硅谷</em></strong><br><em>单链表可以有头节点也可以没有。</em><br><strong>以下代码涵盖单链表的总结。</strong></p>
-<h2 id="英雄排行功能"><a href="#英雄排行功能" class="headerlink" title="英雄排行功能"></a>英雄排行功能</h2><pre class=" language-bash"><code class="language-bash">public class SingleLinkedListDemo <span class="token punctuation">{</span>
+<h2 id="英雄排行功能"><a href="#英雄排行功能" class="headerlink" title="英雄排行功能"></a>英雄排行功能</h2><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SingleLinkedListDemo</span> <span class="token punctuation">{</span>
 
-    public static void main<span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        // TODO Auto-generated method stub
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// TODO Auto-generated method stub</span>
 
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
-//英雄类
-class HeroNode<span class="token punctuation">{</span>
-    public int <span class="token function">id</span><span class="token punctuation">;</span>
-    public String name<span class="token punctuation">;</span>
-    public String nickName<span class="token punctuation">;</span>
-    public HeroNode next<span class="token punctuation">;</span>
-    public HeroNode<span class="token punctuation">(</span>int id, String name,String nickName<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        this.id <span class="token operator">=</span> <span class="token function">id</span><span class="token punctuation">;</span>
-        this.name <span class="token operator">=</span> name<span class="token punctuation">;</span>
-        this.nickName <span class="token operator">=</span> nickName<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//英雄类</span>
+<span class="token keyword">class</span> <span class="token class-name">HeroNode</span><span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> id<span class="token punctuation">;</span>
+    <span class="token keyword">public</span> String name<span class="token punctuation">;</span>
+    <span class="token keyword">public</span> String nickName<span class="token punctuation">;</span>
+    <span class="token keyword">public</span> HeroNode next<span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token function">HeroNode</span><span class="token punctuation">(</span><span class="token keyword">int</span> id<span class="token punctuation">,</span> String name<span class="token punctuation">,</span>String nickName<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>id <span class="token operator">=</span> id<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>nickName <span class="token operator">=</span> nickName<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-    @Override
-    public String toString<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> <span class="token string">"HeroNode [id="</span> + <span class="token function">id</span> + <span class="token string">", name="</span> + name + <span class="token string">", nickName="</span> + nickName + <span class="token string">"]"</span><span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> String <span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token string">"HeroNode [id="</span> <span class="token operator">+</span> id <span class="token operator">+</span> <span class="token string">", name="</span> <span class="token operator">+</span> name <span class="token operator">+</span> <span class="token string">", nickName="</span> <span class="token operator">+</span> nickName <span class="token operator">+</span> <span class="token string">"]"</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
-//链表类
-class SingleLinkedList<span class="token punctuation">{</span>
-    HeroNode <span class="token function">head</span> <span class="token operator">=</span> new HeroNode<span class="token punctuation">(</span>0,<span class="token string">""</span>,<span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    public HeroNode getHead<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> <span class="token function">head</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//链表类</span>
+<span class="token keyword">class</span> <span class="token class-name">SingleLinkedList</span><span class="token punctuation">{</span>
+    HeroNode head <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HeroNode</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token string">""</span><span class="token punctuation">,</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> HeroNode <span class="token function">getHead</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> head<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-    //显示链表方法
-    public void list<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        if<span class="token punctuation">(</span>head.next <span class="token operator">==</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            System.out.println<span class="token punctuation">(</span><span class="token string">"链表空，无法显示。"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//显示链表方法</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">list</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>head<span class="token punctuation">.</span>next <span class="token operator">==</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"链表空，无法显示。"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
             <span class="token keyword">return</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
-        while<span class="token punctuation">(</span>true<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            HeroNode temp <span class="token operator">=</span> <span class="token function">head</span><span class="token punctuation">;</span>
-            if<span class="token punctuation">(</span>temp.next <span class="token operator">==</span> null<span class="token punctuation">)</span> 
+        <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            HeroNode temp <span class="token operator">=</span> head<span class="token punctuation">;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>temp<span class="token punctuation">.</span>next <span class="token operator">==</span> null<span class="token punctuation">)</span> 
                 <span class="token keyword">break</span><span class="token punctuation">;</span>
-            System.out.println<span class="token punctuation">(</span>temp<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            temp <span class="token operator">=</span> temp.next<span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>temp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            temp <span class="token operator">=</span> temp<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
-    //无顺序添加链表
-    public void add<span class="token punctuation">(</span>HeroNode heroNode<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        HeroNode temp <span class="token operator">=</span> <span class="token function">head</span><span class="token punctuation">;</span>
-        while<span class="token punctuation">(</span>true<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            if<span class="token punctuation">(</span>temp.next <span class="token operator">==</span> null<span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">//无顺序添加链表</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">add</span><span class="token punctuation">(</span>HeroNode heroNode<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        HeroNode temp <span class="token operator">=</span> head<span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>temp<span class="token punctuation">.</span>next <span class="token operator">==</span> null<span class="token punctuation">)</span>
                 <span class="token keyword">break</span><span class="token punctuation">;</span>
-            temp <span class="token operator">=</span> temp.next<span class="token punctuation">;</span>
+            temp <span class="token operator">=</span> temp<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
-        temp.next <span class="token operator">=</span> heroNode<span class="token punctuation">;</span>
+        temp<span class="token punctuation">.</span>next <span class="token operator">=</span> heroNode<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-    //按id大小顺序，从小到大，插入或添加链表
-    public void addByOrder<span class="token punctuation">(</span>HeroNode heroNode<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        HeroNode temp <span class="token operator">=</span> <span class="token function">head</span><span class="token punctuation">;</span>
-        boolean flag <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-        while<span class="token punctuation">(</span>true<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            if<span class="token punctuation">(</span>temp.next <span class="token operator">==</span> null<span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">//按id大小顺序，从小到大，插入或添加链表</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">addByOrder</span><span class="token punctuation">(</span>HeroNode heroNode<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        HeroNode temp <span class="token operator">=</span> head<span class="token punctuation">;</span>
+        <span class="token keyword">boolean</span> flag <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>temp<span class="token punctuation">.</span>next <span class="token operator">==</span> null<span class="token punctuation">)</span>
                 <span class="token keyword">break</span><span class="token punctuation">;</span>
-            if<span class="token punctuation">(</span>temp.next.id <span class="token operator">></span> heroNode.id<span class="token punctuation">)</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>temp<span class="token punctuation">.</span>next<span class="token punctuation">.</span>id <span class="token operator">></span> heroNode<span class="token punctuation">.</span>id<span class="token punctuation">)</span>
                 <span class="token keyword">break</span><span class="token punctuation">;</span>
-            if<span class="token punctuation">(</span>temp.next.id <span class="token operator">==</span> heroNode.id<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>temp<span class="token punctuation">.</span>next<span class="token punctuation">.</span>id <span class="token operator">==</span> heroNode<span class="token punctuation">.</span>id<span class="token punctuation">)</span> <span class="token punctuation">{</span>
                 flag <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
                 <span class="token keyword">break</span><span class="token punctuation">;</span>
             <span class="token punctuation">}</span>    
-            temp <span class="token operator">=</span> temp.next<span class="token punctuation">;</span>
+            temp <span class="token operator">=</span> temp<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
-        if<span class="token punctuation">(</span>flag<span class="token punctuation">)</span>
-            System.out.println<span class="token punctuation">(</span><span class="token string">"添加失败，已保存目标id。"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"添加失败，已保存目标id。"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token keyword">else</span> <span class="token punctuation">{</span>
-            heroNode.next <span class="token operator">=</span> temp.next<span class="token punctuation">;</span>
-            temp.next <span class="token operator">=</span> heroNode<span class="token punctuation">;</span>
+            heroNode<span class="token punctuation">.</span>next <span class="token operator">=</span> temp<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+            temp<span class="token punctuation">.</span>next <span class="token operator">=</span> heroNode<span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
-<p><strong>以上内容若有错误或更优解，欢迎指正。</strong></p>
+<p><strong>以上内容若有错误或更优解，欢迎指正~~。</strong></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -633,7 +637,7 @@ class SingleLinkedList<span class="token punctuation">{</span>
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2020/10/06/dan-lian-biao-zong-jie-can-kao-zi-shang-huo-gu/">http://example.com/2020/10/06/dan-lian-biao-zong-jie-can-kao-zi-shang-huo-gu/</a>
+                    <a href="http://example.com/2020/10/06/dan-lian-biao-zong-jie-can-kao-zi-shang-huo-gu-java-yu-yan/">http://example.com/2020/10/06/dan-lian-biao-zong-jie-can-kao-zi-shang-huo-gu-java-yu-yan/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -681,6 +685,10 @@ class SingleLinkedList<span class="token punctuation">{</span>
                             
                                 <a href="/tags/%E5%B0%9A%E7%A1%85%E8%B0%B7/">
                                     <span class="chip bg-color">尚硅谷</span>
+                                </a>
+                            
+                                <a href="/tags/JAVA/">
+                                    <span class="chip bg-color">JAVA</span>
                                 </a>
                             
                         </div>
@@ -853,12 +861,12 @@ class SingleLinkedList<span class="token punctuation">{</span>
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2020/10/06/dan-lian-biao-zong-jie-can-kao-zi-shang-huo-gu/">
+                <a href="/2020/10/06/dan-lian-biao-zong-jie-can-kao-zi-shang-huo-gu-java-yu-yan/">
                     <div class="card-image">
                         
-                        <img src="https://creeper-1303839585.cos.ap-beijing.myqcloud.com/blog/Single%20Linked%20List%20%20summary/1.jpg" class="responsive-img" alt="单链表总结（参考自尚硅谷）">
+                        <img src="https://creeper-1303839585.cos.ap-beijing.myqcloud.com/blog/Single%20Linked%20List%20%20summary/1.jpg" class="responsive-img" alt="单链表总结（参考自尚硅谷Java语言）">
                         
-                        <span class="card-title">单链表总结（参考自尚硅谷）</span>
+                        <span class="card-title">单链表总结（参考自尚硅谷Java语言）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -897,6 +905,10 @@ class SingleLinkedList<span class="token punctuation">{</span>
                     
                     <a href="/tags/%E5%B0%9A%E7%A1%85%E8%B0%B7/">
                         <span class="chip bg-color">尚硅谷</span>
+                    </a>
+                    
+                    <a href="/tags/JAVA/">
+                        <span class="chip bg-color">JAVA</span>
                     </a>
                     
                 </div>
