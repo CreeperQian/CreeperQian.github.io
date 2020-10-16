@@ -494,7 +494,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    661
+                    672
                 </div>
                 
 
@@ -675,21 +675,22 @@
         <span class="token punctuation">}</span>
         <span class="token keyword">return</span> cur<span class="token punctuation">;</span>
     <span class="token punctuation">}</span></code></pre>
-<h2 id="腾讯面试题"><a href="#腾讯面试题" class="headerlink" title="腾讯面试题"></a>腾讯面试题</h2><pre class=" language-java//腾讯面试题：将单链表反转"><code class="language-java//腾讯面试题：将单链表反转">    public static void reversetList(HeroNode head) {
-        if(head.next == null || head.next.next == null) {
-            return;
-        }
-        HeroNode cur = head.next;
-        HeroNode next = null;
-        HeroNode reverseHead = new HeroNode(0, "", "");
-        while(cur != null) {
-            next = cur.next;
-            cur.next = reverseHead.next;
-            reverseHead.next = cur;
-            cur = next;
-        }
-        head.next = reverseHead.next;
-    }</code></pre>
+<h2 id="腾讯面试题"><a href="#腾讯面试题" class="headerlink" title="腾讯面试题"></a>腾讯面试题</h2><pre class=" language-java"><code class="language-java">    <span class="token comment" spellcheck="true">//腾讯面试题：将单链表反转</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">reversetList</span><span class="token punctuation">(</span>HeroNode head<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>head<span class="token punctuation">.</span>next <span class="token operator">==</span> null <span class="token operator">||</span> head<span class="token punctuation">.</span>next<span class="token punctuation">.</span>next <span class="token operator">==</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        HeroNode cur <span class="token operator">=</span> head<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+        HeroNode next <span class="token operator">=</span> null<span class="token punctuation">;</span>
+        HeroNode reverseHead <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HeroNode</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>cur <span class="token operator">!=</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            next <span class="token operator">=</span> cur<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+            cur<span class="token punctuation">.</span>next <span class="token operator">=</span> reverseHead<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+            reverseHead<span class="token punctuation">.</span>next <span class="token operator">=</span> cur<span class="token punctuation">;</span>
+            cur <span class="token operator">=</span> next<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        head<span class="token punctuation">.</span>next <span class="token operator">=</span> reverseHead<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span></code></pre>
 <p><strong>以上内容若有错误或更优解，欢迎指正~~。</strong></p>
 <script>
         document.querySelectorAll('.github-emoji')
@@ -1309,7 +1310,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">902</span>&nbsp;字
+                class="white-color">913</span>&nbsp;字
             
             
             
